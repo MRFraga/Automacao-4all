@@ -29,20 +29,20 @@ WebDriver driver;
 	@BeforeTest
 	public void setUp(String browserSelect) {
 		
-		//Preparação para múltiplos browsers em paralelo
+		//PreparaÃ§Ã£o para mÃºltiplos browsers em paralelo
 		
 		try {
 		
 			if(browserSelect.equalsIgnoreCase("firefox")) {
-			 
-			System.setProperty("webdriver.gecko.driver", "C:\\geckodriver.exe");
+			
+				
 			driver = new FirefoxDriver();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.manage().window().maximize(); 
 			
 			  }else if (browserSelect.equalsIgnoreCase("chrome")) { 
 			 
-				  System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");  
+				
 				  driver = new ChromeDriver();
 				  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				  driver.manage().window().maximize();
@@ -84,7 +84,7 @@ WebDriver driver;
 		
 	    driver.findElement(By.id("finish-checkout-button")).click();	    
 	    
-	    //Validação
+	    //ValidaÃ§Ã£o
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("ReactModalPortal")));
 	  	    
 	  	WebElement Success = driver.findElement(By.className("ReactModalPortal"));
@@ -92,7 +92,7 @@ WebDriver driver;
 	  	Assert.assertTrue(SuccessMessage.contains("Pedido realizado com sucesso!"));
 	  	System.out.print("\n" + SuccessMessage + "\n");
 	  	    
-	  	//Finalização
+	  	//FinalizaÃ§Ã£o
 	  	driver.findElement(By.className("close-modal")).click();
 	    
 	}
@@ -158,7 +158,7 @@ WebDriver driver;
 				
 			}
 		
-		//Validação do preço dos produtos (vide nota)
+		//ValidaÃ§Ã£o do preÃ§o dos produtos (vide nota)
 		
 		SoftAssert softAssert = new SoftAssert();
 
@@ -171,7 +171,7 @@ WebDriver driver;
 					 
 		driver.findElement(By.id("finish-checkout-button")).click();
 	    
-	    //Validação
+	    //ValidaÃ§Ã£o
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("ReactModalPortal")));
 	  	    
 	  	WebElement Success = driver.findElement(By.className("ReactModalPortal"));
@@ -179,7 +179,7 @@ WebDriver driver;
 	  	Assert.assertTrue(SuccessMessage.contains("Pedido realizado com sucesso!"));
 	  	System.out.print("\n" + SuccessMessage + "\n");
 	  	    
-	  	//Finalização
+	  	//FinalizaÃ§Ã£o
 	  	driver.findElement(By.className("close-modal")).click();
 		
 	}
