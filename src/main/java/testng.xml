@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="UI Test Suite" parallel="tests" verbose="10">
+ <test name="FirefoxTest">
+ 	<parameter name="browserSelect" value="firefox" />
+ 	<classes>
+ 		<class name="UITest.Desafio" />
+ 	</classes>
+ </test>
+ <test name="ChromeTest">
+ 	<parameter name="browserSelect" value="chrome" />
+ 	<classes>
+ 		<class name="UITest.Desafio" />
+	</classes>
+ </test>
+</suite>
